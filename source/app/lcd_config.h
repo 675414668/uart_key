@@ -1,0 +1,81 @@
+#ifndef __LCD_CONFIG_H
+#define __LCD_CONFIG_H
+
+#define MENU_OPTIONS_NUM              (7)
+#define LASER_CTRL_OPTIONS_NUM        (3)
+#define LASER_CTRL_MODE_SET_NUM       (4)
+#define LASER_CTRL_STATE_SET_NUM      (3)
+#define LASER_CTRL_SYSTEM_NUM         (3)
+#define LASER_CTRL_LANGUAGE_SET_NUM     (3)
+#define LASER_CTRL_STOPWATCH_NUM     (3)
+
+#define COVER_MODE (0)
+#define UCOVER_MODE (1)
+#define LCD_X1 (0)
+#define LCD_Y1 (0)
+#define LCD_X2 (280)
+#define LCD_Y2 (240)
+
+#define SHOW_WORD_X       (30)
+#define SHOW_WORD_Y       (10)
+#define SHOW_WORD_SIZE    (16)
+#define SHOW_WORD_SIZE_C    (12)
+
+#define PRESS_KEY_X    (50)
+#define PRESS_KEY_Y    (195)
+#define PRESS_KEY_SIZE (24)
+#define PRESS_KEY_SIZE_C (16)
+
+#define ASTRONAUT_IMAGE_X1 (235)
+#define ASTRONAUT_IMAGE_Y1 (200)
+#define ASTRONAUT_IMAGE_X_SIZE (45)
+#define ASTRONAUT_IMAGE_Y_SIZE (38)
+
+#define TITLE_SIZE (24)
+#define MENU_TITLE_X (116)
+#define MENU_TITLE_Y (0)
+#define LASER_CTRL_TITLE_X (62)
+#define LASER_CTRL_TITLE_Y (0)
+#define SYSTEM_SET_TITLE_X (80)
+#define SYSTEM_SET_TITLE_Y (0)
+
+#define CURSOR_X  (30)
+#define CURSOR_Y  (TITLE_SIZE+10)
+#define CURSOR_SIZE  (16)
+#define CURSOR_SIZE_C  (12)
+#define MAIN_WORD_X (CURSOR_X+CURSOR_SIZE)
+#define MAIN_WORD_Y (TITLE_SIZE+10)
+#define MAIN_WORD_SIZE (16)
+#define MAIN_WORD_SIZE_C (12)
+#define BELONG_WORD_X (120)
+#define BELONG_WORD_Y (TITLE_SIZE+10)
+#define BELONG_WORD_SIZE (MAIN_WORD_SIZE)
+#define BELONG_WORD_SIZE_C (MAIN_WORD_SIZE_C)
+
+#define SET_RECTANGLE_X1  (180)
+#define SET_RECTANGLE_Y1  (TITLE_SIZE+6)
+#define SET_RECTANGLE_X2  (275)
+#define SET_RECTANGLE_Y2  (180)
+
+#define SET_LINE_X1  (SET_RECTANGLE_X1)
+#define SET_LINE_Y1  (SET_RECTANGLE_Y1+30)
+#define SET_LINE_X2  (SET_RECTANGLE_X2)
+#define SET_LINE_Y2  (SET_RECTANGLE_Y1+30)
+
+#define SET_CURSOR_X  (SET_RECTANGLE_X1+5)
+#define SET_CURSOR_Y  (SET_LINE_Y1+5)
+#define SET_CURSOR_SIZE  (16)
+#define SET_CURSOR_SIZE_C  (12)
+#define SET_WORD_X (SET_CURSOR_X+SET_CURSOR_SIZE)
+#define SET_WORD_Y (SET_CURSOR_Y)
+#define SET_WORD_SIZE (16)
+#define SET_WORD_SIZE_C (12)
+
+#define STOPWATCH_X (30)
+#define STOPWATCH_Y (50)
+#define STOPWATCH_WORD_X (50)
+#define STOPWATCH_WORD_Y (150)
+#define STOPWATCH_WORD_SIZE (16)
+#define STOPWATCH_SIZE (32)
+
+#endif 
