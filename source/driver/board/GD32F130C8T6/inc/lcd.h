@@ -22,12 +22,12 @@
 
 
 #if USE_HORIZONTAL==0||USE_HORIZONTAL==1
-#define LCD_W 240
-#define LCD_H 280
+#define LCD_W 135
+#define LCD_H 240
 
 #else
-#define LCD_W 280
-#define LCD_H 240
+#define LCD_W 240
+#define LCD_H 135
 #endif
 
 

@@ -39,10 +39,10 @@ void bsp_lcd_gpio_init(void)
 {
  	rcu_periph_clock_enable(LCD_CONTROL_RCU);	 //使能A端口时钟
 
-	gpio_mode_set(LCD_CONTROL_PORT, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE,  LCD_CONTROL_RES|LCD_CONTROL_DC|LCD_CONTROL_BLK|LCD_CONTROL_CS1|LCD_CONTROL_CS2);
+	gpio_mode_set(LCD_CONTROL_PORT, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE,  LCD_CONTROL_RES|LCD_CONTROL_DC|LCD_CONTROL_BLK|LCD_CONTROL_CS1);
   gpio_mode_set(LCD_CONTROL_PORT, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE,  LCD_CONTROL_SCK|LCD_CONTROL_SDA);
-	gpio_output_options_set(LCD_CONTROL_PORT,GPIO_OTYPE_PP,GPIO_OSPEED_50MHZ, LCD_CONTROL_RES|LCD_CONTROL_DC|LCD_CONTROL_BLK|LCD_CONTROL_CS1|LCD_CONTROL_CS2|LCD_CONTROL_SCK|LCD_CONTROL_SDA);
-  gpio_bit_set(LCD_CONTROL_PORT, LCD_CONTROL_RES|LCD_CONTROL_DC|LCD_CONTROL_BLK|LCD_CONTROL_CS1|LCD_CONTROL_CS2|LCD_CONTROL_SCK|LCD_CONTROL_SDA);
+	gpio_output_options_set(LCD_CONTROL_PORT,GPIO_OTYPE_PP,GPIO_OSPEED_50MHZ, LCD_CONTROL_RES|LCD_CONTROL_DC|LCD_CONTROL_BLK|LCD_CONTROL_CS1|LCD_CONTROL_SCK|LCD_CONTROL_SDA);
+  gpio_bit_set(LCD_CONTROL_PORT, LCD_CONTROL_RES|LCD_CONTROL_DC|LCD_CONTROL_BLK|LCD_CONTROL_CS1|LCD_CONTROL_SCK|LCD_CONTROL_SDA);
   gpio_mode_set(LCD_CONTROL_PORT,GPIO_MODE_INPUT,GPIO_PUPD_PULLDOWN,LCD_CONTROL_MISO);
 }
 
@@ -80,13 +80,16 @@ static void bsp_lcd_driver_init(void)
 	bsp_lcd_write_8bit(0x35);
 
 	bsp_lcd_write_reg(0xBB);			
-	bsp_lcd_write_8bit(0x32); //Vcom=1.35V
-					
+	bsp_lcd_write_8bit(0x19); //Vcom=1.35V
+	
+	bsp_lcd_write_reg(0xC0);
+	bsp_lcd_write_8bit(0x2C);
+	
 	bsp_lcd_write_reg(0xC2);
 	bsp_lcd_write_8bit(0x01);
 
 	bsp_lcd_write_reg(0xC3);			
-	bsp_lcd_write_8bit(0x15); //GVDD=4.8V  颜色深度
+	bsp_lcd_write_8bit(0x12); //GVDD=4.8V  颜色深度
 				
 	bsp_lcd_write_reg(0xC4);			
 	bsp_lcd_write_8bit(0x20); //VDV, 0x20:0v
@@ -99,36 +102,37 @@ static void bsp_lcd_driver_init(void)
 	bsp_lcd_write_8bit(0xA1); 
 
 	bsp_lcd_write_reg(0xE0);
-	bsp_lcd_write_8bit(0xD0);   
-	bsp_lcd_write_8bit(0x08);   
-	bsp_lcd_write_8bit(0x0E);   
-	bsp_lcd_write_8bit(0x09);   
-	bsp_lcd_write_8bit(0x09);   
-	bsp_lcd_write_8bit(0x05);   
-	bsp_lcd_write_8bit(0x31);   
-	bsp_lcd_write_8bit(0x33);   
-	bsp_lcd_write_8bit(0x48);   
-	bsp_lcd_write_8bit(0x17);   
-	bsp_lcd_write_8bit(0x14);   
-	bsp_lcd_write_8bit(0x15);   
-	bsp_lcd_write_8bit(0x31);   
-	bsp_lcd_write_8bit(0x34);   
+	bsp_lcd_write_8bit(0xD0);
+	bsp_lcd_write_8bit(0x04);
+	bsp_lcd_write_8bit(0x0D);
+	bsp_lcd_write_8bit(0x11);
+	bsp_lcd_write_8bit(0x13);
+	bsp_lcd_write_8bit(0x2B);
+	bsp_lcd_write_8bit(0x3F);
+	bsp_lcd_write_8bit(0x54);
+	bsp_lcd_write_8bit(0x4C);
+	bsp_lcd_write_8bit(0x18);
+	bsp_lcd_write_8bit(0x0D);
+	bsp_lcd_write_8bit(0x0B);
+	bsp_lcd_write_8bit(0x1F);
+	bsp_lcd_write_8bit(0x23);   
 
 	bsp_lcd_write_reg(0xE1);     
-	bsp_lcd_write_8bit(0xD0);   
-	bsp_lcd_write_8bit(0x08);   
-	bsp_lcd_write_8bit(0x0E);   
-	bsp_lcd_write_8bit(0x09);   
-	bsp_lcd_write_8bit(0x09);   
-	bsp_lcd_write_8bit(0x15);   
-	bsp_lcd_write_8bit(0x31);   
-	bsp_lcd_write_8bit(0x33);   
-	bsp_lcd_write_8bit(0x48);   
-	bsp_lcd_write_8bit(0x17);   
-	bsp_lcd_write_8bit(0x14);   
-	bsp_lcd_write_8bit(0x15);   
-	bsp_lcd_write_8bit(0x31);   
-	bsp_lcd_write_8bit(0x34);
+	bsp_lcd_write_8bit(0xD0);
+	bsp_lcd_write_8bit(0x04);
+	bsp_lcd_write_8bit(0x0C);
+	bsp_lcd_write_8bit(0x11);
+	bsp_lcd_write_8bit(0x13);
+	bsp_lcd_write_8bit(0x2C);
+	bsp_lcd_write_8bit(0x3F);
+	bsp_lcd_write_8bit(0x44);
+	bsp_lcd_write_8bit(0x51);
+	bsp_lcd_write_8bit(0x2F);
+	bsp_lcd_write_8bit(0x1F);
+	bsp_lcd_write_8bit(0x1F);
+	bsp_lcd_write_8bit(0x20);
+	bsp_lcd_write_8bit(0x23);
+	
 	bsp_lcd_write_reg(0x21); 
 
 	bsp_lcd_write_reg(0x29);
@@ -207,41 +211,41 @@ void bsp_lcd_set_addr(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2)
 	if(USE_HORIZONTAL==0)
 	{
 		bsp_lcd_write_reg(0x2a);//列地址设置
-		bsp_lcd_write_16bit(x1);
-		bsp_lcd_write_16bit(x2);
+		bsp_lcd_write_16bit(x1+52);
+		bsp_lcd_write_16bit(x2+52);
 		bsp_lcd_write_reg(0x2b);//行地址设置
-		bsp_lcd_write_16bit(y1+0x14);
-		bsp_lcd_write_16bit(y2+0x14);
+		bsp_lcd_write_16bit(y1+40);
+		bsp_lcd_write_16bit(y2+40);
 		bsp_lcd_write_reg(0x2c);//储存器写
 	}
 	else if(USE_HORIZONTAL==1)
 	{
 		bsp_lcd_write_reg(0x2a);//列地址设置
-		bsp_lcd_write_16bit(x1);
-		bsp_lcd_write_16bit(x2);
+		bsp_lcd_write_16bit(x1+53);
+		bsp_lcd_write_16bit(x2+53);
 		bsp_lcd_write_reg(0x2b);//行地址设置
-		bsp_lcd_write_16bit(y1+0x14);
-		bsp_lcd_write_16bit(y2+0x14);
+		bsp_lcd_write_16bit(y1+40);
+		bsp_lcd_write_16bit(y2+40);
 		bsp_lcd_write_reg(0x2c);//储存器写
 	}
 	else if(USE_HORIZONTAL==2)
 	{
 		bsp_lcd_write_reg(0x2a);//列地址设置
-		bsp_lcd_write_16bit(x1+0x14);
-		bsp_lcd_write_16bit(x2+0x14);
+		bsp_lcd_write_16bit(x1+40);
+		bsp_lcd_write_16bit(x2+40);
 		bsp_lcd_write_reg(0x2b);//行地址设置
-		bsp_lcd_write_16bit(y1);
-		bsp_lcd_write_16bit(y2);
+		bsp_lcd_write_16bit(y1+53);
+		bsp_lcd_write_16bit(y2+53);
 		bsp_lcd_write_reg(0x2c);//储存器写
 	}
 	else
 	{
 		bsp_lcd_write_reg(0x2a);//列地址设置
-		bsp_lcd_write_16bit(x1+0x14);
-		bsp_lcd_write_16bit(x2+0x14);
+		bsp_lcd_write_16bit(x1+40);
+		bsp_lcd_write_16bit(x2+40);
 		bsp_lcd_write_reg(0x2b);//行地址设置
-		bsp_lcd_write_16bit(y1);
-		bsp_lcd_write_16bit(y2);
+		bsp_lcd_write_16bit(y1+52);
+		bsp_lcd_write_16bit(y2+52);
 		bsp_lcd_write_reg(0x2c);//储存器写
 	}
 } 
