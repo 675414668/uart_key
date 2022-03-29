@@ -13,8 +13,8 @@
 #define UCOVER_MODE (1)
 #define LCD_X1 (0)
 #define LCD_Y1 (0)
-#define LCD_X2 (280)
-#define LCD_Y2 (240)
+#define LCD_X2 (240)
+#define LCD_Y2 (135)
 
 #define SHOW_WORD_X       (30)
 #define SHOW_WORD_Y       (10)
@@ -26,8 +26,8 @@
 #define PRESS_KEY_SIZE (24)
 #define PRESS_KEY_SIZE_C (16)
 
-#define ASTRONAUT_IMAGE_X1 (235)
-#define ASTRONAUT_IMAGE_Y1 (200)
+#define ASTRONAUT_IMAGE_X1 (50)
+#define ASTRONAUT_IMAGE_Y1 (50)
 #define ASTRONAUT_IMAGE_X_SIZE (45)
 #define ASTRONAUT_IMAGE_Y_SIZE (38)
 

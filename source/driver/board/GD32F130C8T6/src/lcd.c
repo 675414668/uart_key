@@ -1,4 +1,5 @@
 #include "lcd.h"
+#include "delay.h"
 
 typedef struct 
 {
@@ -29,31 +30,29 @@ void bsp_lcd_init(void)
 {
 	bsp_lcd_gpio_init();//初始化GPIO
 	bsp_lcd_driver_init();
-	bsp_stopwatch_data_init();
-	lcd_tim_ctrl.astronaut_image_num=1;
-	lcd_tim_ctrl.gif_timecount=0;
-	lcd_tim_ctrl.waiting_time=1;
+//	bsp_stopwatch_data_init();
+//	lcd_tim_ctrl.astronaut_image_num=1;
+//	lcd_tim_ctrl.gif_timecount=0;
+//	lcd_tim_ctrl.waiting_time=1;
 }
 
 void bsp_lcd_gpio_init(void)
 {
  	rcu_periph_clock_enable(LCD_CONTROL_RCU);	 //使能A端口时钟
 
-	gpio_mode_set(LCD_CONTROL_PORT, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE,  LCD_CONTROL_RES|LCD_CONTROL_DC|LCD_CONTROL_BLK|LCD_CONTROL_CS1);
-  gpio_mode_set(LCD_CONTROL_PORT, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE,  LCD_CONTROL_SCK|LCD_CONTROL_SDA);
+	gpio_mode_set(LCD_CONTROL_PORT, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE,  LCD_CONTROL_RES|LCD_CONTROL_DC|LCD_CONTROL_BLK|LCD_CONTROL_CS1|LCD_CONTROL_SCK|LCD_CONTROL_SDA);
 	gpio_output_options_set(LCD_CONTROL_PORT,GPIO_OTYPE_PP,GPIO_OSPEED_50MHZ, LCD_CONTROL_RES|LCD_CONTROL_DC|LCD_CONTROL_BLK|LCD_CONTROL_CS1|LCD_CONTROL_SCK|LCD_CONTROL_SDA);
   gpio_bit_set(LCD_CONTROL_PORT, LCD_CONTROL_RES|LCD_CONTROL_DC|LCD_CONTROL_BLK|LCD_CONTROL_CS1|LCD_CONTROL_SCK|LCD_CONTROL_SDA);
-  gpio_mode_set(LCD_CONTROL_PORT,GPIO_MODE_INPUT,GPIO_PUPD_PULLDOWN,LCD_CONTROL_MISO);
 }
 
 static void bsp_lcd_driver_init(void)
 {
-		LCD_RES_RESET();//复位
+	LCD_RES_RESET();//复位
 //	bsp_delay_ms(100);
 	LCD_RES_SET();
 //	bsp_delay_ms(100);
 	
-	LCD_BLK_SET();//打开背光
+//	LCD_BLK_SET();//打开背光
 //  bsp_delay_ms(100);
 	
 	//************* Start Initial Sequence **********//

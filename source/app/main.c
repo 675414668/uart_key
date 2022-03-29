@@ -24,9 +24,8 @@ int main(void)
 	printf("SOFTWARE_VERSION:%s\r\n",SOFTWARE_VERSION);
     while(1)
 		{
-				hal_lcd_show_string(195,37,(uint8_t *)"language",BRRED,BLACK,SET_WORD_SIZE,COVER_MODE);
 //			task_key_scan();
-//			task_lcd_display();
+			task_lcd_display();
 //			task_led();
 //			task_laser();
     }
