@@ -8,7 +8,7 @@ static void lcd_data_init(void);
 void task_lcd_init(void)
 {
 	hal_lcd_init();
-	hal_key_init();
+//	hal_key_init();
 	lcd_data_init();
 	hal_lcd_fill(LCD_X1,LCD_X1,LCD_X2,LCD_Y2,BLACK);
 }

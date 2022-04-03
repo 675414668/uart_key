@@ -15,8 +15,8 @@ enum
 
 #define KEY_RCC   RCU_GPIOB
 #define KEY_PORT  GPIOB
-#define KEY1_PIN  GPIO_PIN_8
-#define KEY2_PIN  GPIO_PIN_9
+#define KEY1_PIN  GPIO_PIN_9
+#define KEY2_PIN  GPIO_PIN_8
 
 #define KEY_TIM                TIMER2
 #define KEY_TIM_RCC            RCU_TIMER2

@@ -60,8 +60,14 @@ static void bsp_key_scan(void)
 	}
 	else
 	{
-		if(key_crl.key1_count<KEY_L_TIM && key_crl.key1_count>KEY_S_TIM)       key_crl.press = KEY1_S;
-		else if(key_crl.key1_count>KEY_L_TIM)  key_crl.press = KEY1_L;
+		if(key_crl.key1_count<KEY_L_TIM && key_crl.key1_count>KEY_S_TIM) 
+		{
+			key_crl.press = KEY1_S;
+		}      
+		else if(key_crl.key1_count>KEY_L_TIM) 
+		{
+			key_crl.press = KEY1_L;
+		}		
 		key_crl.key1_count=0;
 	}
 	if(gpio_input_bit_get(KEY_PORT,KEY2_PIN)==0)
@@ -70,8 +76,14 @@ static void bsp_key_scan(void)
 	}
 	else
 	{
-		if(key_crl.key2_count<KEY_L_TIM && key_crl.key2_count>KEY_S_TIM)       key_crl.press = KEY2_S;
-		else if(key_crl.key2_count>KEY_L_TIM)  key_crl.press = KEY2_L;
+		if(key_crl.key2_count<KEY_L_TIM && key_crl.key2_count>KEY_S_TIM) 
+		{
+			key_crl.press = KEY2_S;
+		}      
+		else if(key_crl.key2_count>KEY_L_TIM)
+		{
+			key_crl.press = KEY2_L;
+		}			
 		key_crl.key2_count=0;
 	}
 }
