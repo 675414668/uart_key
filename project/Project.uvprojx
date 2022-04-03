@@ -403,6 +403,11 @@
               <FileType>1</FileType>
               <FilePath>..\source\app\task_usart.c</FilePath>
             </File>
+            <File>
+              <FileName>usart_protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\app\usart_protocol.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -3462,6 +3467,11 @@
               <FileName>task_usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\app\task_usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart_protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\app\usart_protocol.c</FilePath>
             </File>
           </Files>
         </Group>

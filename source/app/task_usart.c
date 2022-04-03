@@ -1,4 +1,5 @@
 #include "task_usart.h"
+#include "usart_protocol.h"
 
 static void task_usart_callback(void);
 
