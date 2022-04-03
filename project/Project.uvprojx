@@ -398,6 +398,11 @@
               <FileType>1</FileType>
               <FilePath>..\source\app\task_key.c</FilePath>
             </File>
+            <File>
+              <FileName>task_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\app\task_usart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -3064,8 +3069,9 @@
       <TargetName>GD32F130C8T6</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
-      <uAC6>0</uAC6>
+      <pArmCC>6160000::V6.16::ARMCLANG</pArmCC>
+      <pCCUsed>6160000::V6.16::ARMCLANG</pCCUsed>
+      <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>GD32F130C8</Device>
@@ -3367,7 +3373,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>1</Optim>
+            <Optim>2</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -3376,7 +3382,7 @@
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>2</wLevel>
+            <wLevel>3</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
             <uC99>1</uC99>
@@ -3451,6 +3457,11 @@
               <FileName>task_key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\app\task_key.c</FilePath>
+            </File>
+            <File>
+              <FileName>task_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\app\task_usart.c</FilePath>
             </File>
           </Files>
         </Group>

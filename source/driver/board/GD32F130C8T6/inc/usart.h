@@ -13,4 +13,5 @@
 #define USART_COM_RX_PIN       GPIO_PIN_7
 
 void bsp_usart_com_init(uint32_t boadrate);
+void bsp_usart_callback(void *cb);
 #endif

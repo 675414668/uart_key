@@ -36,7 +36,7 @@ void bsp_lcd_init(void)
 //	lcd_tim_ctrl.waiting_time=1;
 }
 
-void bsp_lcd_gpio_init(void)
+static void bsp_lcd_gpio_init(void)
 {
  	rcu_periph_clock_enable(LCD_CONTROL_RCU);	 //使能A端口时钟
 

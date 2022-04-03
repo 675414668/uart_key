@@ -1,16 +1,18 @@
 #include "hal.h"
 #include "version.h"
 #include "task_lcd.h"
-#include "task_key.h"
+#include "task_usart.h"
 
 int main(void)
 {
 	hal_sys_clk_init();
 	hal_delay_init();
+	
 	hal_usart_init(115200);
+
 	hal_flash_user_data_init();
   task_lcd_init();
-
+	task_usart_init();
 	
 	printf("system begin\r\n");
   printf("cpu frequency:%d\r\n",hal_get_clock_frequency(SYSCLK_FREQUENCY));

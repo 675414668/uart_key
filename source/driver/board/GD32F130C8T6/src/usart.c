@@ -1,5 +1,10 @@
 #include "usart.h"
 
+typedef struct {
+	void (*callback_fun)();
+}usart_t;
+
+usart_t usart;
 static void bsp_usart_gpio_init(void);
 static void bsp_usart_driver_init(uint32_t boadrate);
 
@@ -7,6 +12,10 @@ void bsp_usart_com_init(uint32_t boadrate)
 {
   bsp_usart_gpio_init();
 	bsp_usart_driver_init(boadrate);
+}
+void bsp_usart_callback(void *cb)
+{
+	usart.callback_fun=cb;
 }
 static void bsp_usart_gpio_init(void)
 {

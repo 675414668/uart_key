@@ -63,7 +63,6 @@
 #define WAITING_TIM    (WAITING_NUM*WAITING_SPEED)
 
 void bsp_lcd_init(void);
-void bsp_lcd_gpio_init(void);//初始化GPIO
 void bsp_lcd_write_bus(uint8_t dat);//模拟SPI时序
 void bsp_lcd_write_8bit(uint8_t dat);//写入一个字节
 void bsp_lcd_write_16bit(uint16_t dat);//写入两个字节
