@@ -1,20 +1,14 @@
 #include "hal.h"
 #include "version.h"
 #include "task_lcd.h"
-#include "task_led.h"
 #include "task_key.h"
-#include "task_laser.h"
-#include "echo.h"
 
 int main(void)
 {
 	hal_sys_clk_init();
 	hal_delay_init();
 	hal_usart_init(115200);
-//	hal_echo_init();
-//	hal_flash_user_data_init();
-//	task_laser_init();
-//	task_led_init();
+	hal_flash_user_data_init();
   task_lcd_init();
 
 	

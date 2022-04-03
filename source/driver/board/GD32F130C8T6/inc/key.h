@@ -11,15 +11,12 @@ enum
 	KEY1_L,
 	KEY2_S,
 	KEY2_L,
-	KEY3_S,
-	KEY3_L,
 };
 
-#define KEY_RCC   RCU_GPIOA
-#define KEY_PORT  GPIOA
-#define KEY1_PIN  GPIO_PIN_10
-#define KEY2_PIN  GPIO_PIN_11
-#define KEY3_PIN  GPIO_PIN_12
+#define KEY_RCC   RCU_GPIOB
+#define KEY_PORT  GPIOB
+#define KEY1_PIN  GPIO_PIN_8
+#define KEY2_PIN  GPIO_PIN_9
 
 #define KEY_TIM                TIMER2
 #define KEY_TIM_RCC            RCU_TIMER2
