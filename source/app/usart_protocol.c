@@ -161,12 +161,12 @@ static void usart_protocol_data_pack(uint8_t cmd,uint8_t* payload,uint8_t size)
 	{
 		usart_protocol.tx_buff[5+i]=payload[i];
 	}
-	usart_protocol.tx_buff[4+size]=usart_protocol_creat_crc(usart_protocol.tx_buff,4+size);
+	usart_protocol.tx_buff[5+size]=usart_protocol_creat_crc(usart_protocol.tx_buff,5+size);
 }
 static void usart_get_softwart_version(void)
 {
 	uint8_t version[]=SOFTWARE_VERSION;
 
-	usart_protocol_data_pack(0x10,(uint8_t*)version,sizeof(version));
+	usart_protocol_data_pack(0x10,(uint8_t*)version,sizeof(version)-1);
 	hal_usart_data_send(usart_protocol.tx_buff,sizeof(version)+5);
 }
