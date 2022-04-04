@@ -55,6 +55,15 @@ int fputc(int ch, FILE *f)
     return ch;
 }
 
+void bsp_usart_data_send(uint8_t* data,uint8_t size)
+{
+	uint8_t i;
+	for(i=0;i<size;i++)
+	{
+		usart_data_transmit(USART_COM, (uint8_t)data[i]);
+    while(RESET == usart_flag_get(USART_COM, USART_FLAG_TBE));
+	}
+}
 void USART0_IRQHandler(void)
 {
 	uint8_t rx_data=0;

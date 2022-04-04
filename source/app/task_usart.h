@@ -5,4 +5,5 @@
 
 
 void task_usart_init(void);
+void task_usart(void);
 #endif 

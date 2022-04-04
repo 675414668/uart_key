@@ -6,4 +6,5 @@
 
 void usart_protocol_init(void);
 void usart_rx_protocol(uint8_t rx_data);
+void usart_protocol_analyze(void);
 #endif 

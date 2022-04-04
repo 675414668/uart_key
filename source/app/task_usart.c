@@ -16,3 +16,8 @@ static void task_usart_callback(uint8_t rx_data)
 	usart_rx_protocol(rx_data);
 }
 
+void task_usart(void)
+{
+	usart_protocol_analyze();
+}
+

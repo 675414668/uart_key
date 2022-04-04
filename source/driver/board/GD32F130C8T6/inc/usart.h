@@ -14,4 +14,5 @@
 
 void bsp_usart_com_init(uint32_t boadrate);
 void bsp_usart_callback(void *cb);
+void bsp_usart_data_send(uint8_t* data,uint8_t size);
 #endif
