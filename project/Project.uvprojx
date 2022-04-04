@@ -1320,11 +1320,6 @@
               <FilePath>..\source\driver\board\GD32F130C8T6\src\lcd.c</FilePath>
             </File>
             <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\source\driver\board\GD32F130C8T6\src\usart.c</FilePath>
-            </File>
-            <File>
               <FileName>flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\driver\board\GD32F130C8T6\src\flash.c</FilePath>
@@ -1338,6 +1333,11 @@
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\driver\board\GD32F130C8T6\src\key.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\driver\board\GD32F130C8T6\src\usart.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -4436,11 +4436,6 @@
               <FilePath>..\source\driver\board\GD32F130C8T6\src\lcd.c</FilePath>
             </File>
             <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\source\driver\board\GD32F130C8T6\src\usart.c</FilePath>
-            </File>
-            <File>
               <FileName>flash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\driver\board\GD32F130C8T6\src\flash.c</FilePath>
@@ -4454,6 +4449,11 @@
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\source\driver\board\GD32F130C8T6\src\key.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\source\driver\board\GD32F130C8T6\src\usart.c</FilePath>
             </File>
           </Files>
         </Group>

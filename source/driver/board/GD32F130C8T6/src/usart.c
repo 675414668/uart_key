@@ -34,12 +34,18 @@ static void bsp_usart_driver_init(uint32_t boadrate)
 
     usart_deinit(USART_COM);
     usart_baudrate_set(USART_COM,boadrate);
+		usart_word_length_set(USART_COM, USART_WL_8BIT); //8位数据位
+		usart_stop_bit_set(USART_COM, USART_STB_1BIT);   //1位停止位
+		usart_parity_config(USART_COM, USART_PM_NONE);   //无奇偶校验
+		usart_hardware_flow_rts_config(USART_COM, USART_RTS_DISABLE);
+		usart_hardware_flow_cts_config(USART_COM, USART_CTS_DISABLE);
     usart_transmit_config(USART_COM, USART_TRANSMIT_ENABLE);//发送使能
     usart_receive_config(USART_COM, USART_RECEIVE_ENABLE);//接收使能
-    usart_enable(USART_COM);//USART_COM使能
 	
-	  nvic_irq_enable(USART_COM_IRQn, 0, 0);
+	  nvic_irq_enable(USART_COM_IRQn, 0, 1);
     usart_interrupt_enable(USART_COM, USART_INT_RBNE);//接收中断打开
+	
+	  usart_enable(USART_COM);//USART_COM使能
 }
 
 int fputc(int ch, FILE *f)
@@ -49,3 +55,10 @@ int fputc(int ch, FILE *f)
     return ch;
 }
 
+void USART_COM_IRQHandler(void)
+{
+    if(RESET != usart_interrupt_flag_get(USART_COM, USART_INT_FLAG_RBNE)){
+			usart_data_receive(USART_COM);
+    }
+
+}
