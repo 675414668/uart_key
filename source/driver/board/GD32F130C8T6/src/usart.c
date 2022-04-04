@@ -55,10 +55,13 @@ int fputc(int ch, FILE *f)
     return ch;
 }
 
-void USART_COM_IRQHandler(void)
+void USART0_IRQHandler(void)
 {
+	uint8_t rx_data=0;
+	
     if(RESET != usart_interrupt_flag_get(USART_COM, USART_INT_FLAG_RBNE)){
-			usart_data_receive(USART_COM);
+			rx_data=usart_data_receive(USART_COM);
+			usart.callback_fun(rx_data);
     }
 
 }
